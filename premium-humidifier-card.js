@@ -561,8 +561,8 @@ class PremiumHumidifierCard extends HTMLElement {
     const bg2 = toHexH(cfg.color_bg2)       || '#f0f6fa';
     const dark        = isDarkH(bg1);
     const cardOpacity = cfg.card_opacity!=null ? Number(cfg.card_opacity) : 100;
-    const textMain    = dark ? '#f0f4f8'                   : '#1a2332';
-    const textSub     = dark ? 'rgba(200,215,230,0.75)'    : '#8a9bb0';
+    const textMain    = 'var(--primary-text-color, #1a2332)';
+    const textSub     = 'var(--secondary-text-color, #8a9bb0)';
     const statBg      = dark ? 'rgba(255,255,255,0.07)'    : 'rgba(255,255,255,0.75)';
     const statBorder  = dark ? 'rgba(255,255,255,0.10)'    : 'rgba(220,230,240,0.70)';
     const trackColor  = dark ? 'rgba(255,255,255,0.10)'    : '#e8edf2';
@@ -864,7 +864,7 @@ class PremiumHumidifierCard extends HTMLElement {
               fontSize:     '13px',
               fontWeight:   '600',
               fontFamily:   '-apple-system,sans-serif',
-              color:        isActive ? '#fff' : (dark ? '#f0f4f8' : '#1a2332'),
+              color:        isActive ? '#fff' : 'var(--primary-text-color, #1a2332)',
               background:   isActive ? `linear-gradient(135deg,${p},${alphaH(p,0.8)})` : 'transparent',
               cursor:       'pointer',
               whiteSpace:   'nowrap',
